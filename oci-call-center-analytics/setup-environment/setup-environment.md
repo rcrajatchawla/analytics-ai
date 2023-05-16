@@ -103,15 +103,39 @@ Talk to your Administrator to verify the name of compartment you are to use for 
 
     ```
     <copy>
-    allow group <group-name> to manage all-resources in compartment <compartment-name>
+    allow dynamic-group <dynamic-group-name> to manage object-family in compartment <compartment-name>
     </copy>
     ```
     
     where **compartment-name** should be replaced with the name of your compartment, **group-name** is the name of your group .
 
+## Task 3: Create VCN
+
+We will create a virtual cloud network that will serve as the home for our serverless function and the API gateway we will create.
+
+Create a VCN with Internet access.
+1.	Open the navigation menu, click **Networking**, and then click **Virtual Cloud Networks**.
+
+    ![Create VCN](./images/navigate-to-vcn.png " ")
+
+2.	Click the button **Start VCN Wizard**.
+
+    ![Create VCN](./images/start-vcn-wizard.png " ")
+
+3.	Select **Create VCN with Internet Connectivity**
+
+4.	Click **Start SVN Wizard**
+    ![Create VCN](./images/create-vcn-details1.png " ")
+
+5.	Enter a name for the VCN and click **Next**
+
+    ![Create VCN](./images/create-vcn-details2.png " ")
+
+6.	Click **Create**. Once the VCN is created you should be able to see the VCN setails page
+    ![VCN Details](./images/create-vcn-details3.png " ")
 
 
-## Task 3: Setup API Signing Key
+## Task 4: Setup API Signing Key
 
 Generate an API signing key pair
 

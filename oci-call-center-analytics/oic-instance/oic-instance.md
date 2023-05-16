@@ -31,9 +31,10 @@ This lab assumes you have:
 
     ![Create Instance](./images/create-integration-button.png " ")
 
-3. Fill the fields with name "call-center-demo" or any name your choice and keep the other fields as default
+3. Fill the fields with name "call-center-demo" or any name your choice and keep the other fields as default. You can choose **Oracle Integration Gen 3** or **Oracle Integration Gen 2**.
 
     ![Create Instance detail fields](./images/create-integration.png " ")
+    *Note:*  **Oracle Integration Gen 3** is not available to all users.  
 
 4. Now the Instance is created and wait for its state to change from **Creating** to **Active**. Once the state changes to active, open the integration details page by clicking on it and then click the service console button to open the OIC console page
     ![Open OIC Service console page](./images/integration-details.png " ")
@@ -90,7 +91,7 @@ In this lab, we will implement an integration in which, upon uploading the audio
 14. Hover over Transcribe Audio Files and click on **update property values**
     ![Transcribe Audio Files update property values button](./images/taf-property-values-1.png " ")
 
-15. Under *SpeechApiOutputBucketName* in the **New Value** field fill **your-bucket-name**(*TrancribedFiles* in this case).
+15. Under *SpeechApiOutputBucketName* in the **New Value** field fill **your-bucket-name**(*TranscribedFiles* in this case).
     ![Transcribe Audio Files update property values](./images/taf-property-values-2.png " ")
 
 16. Under *SpeechApiOutputNamespace* in the **Current Value** field make sure you have the namespace of the compartment you have your bucket. If it is not same, Fill the correct namespace in **New Value** and then click **Submit**.
@@ -105,17 +106,17 @@ In this we will setup an integration, which utilizes language services such as k
 1. Navigate to back to back to integrations home page and repeat the step 3 in Task 2 to import [Process Transcriptions](./files/call-center-analytics-process-transcriptions-integration.iar) integration file. This will open the configuration editor for **Process Transcriptions** integration.
     ![Process Transcriptions connections configurations](./images/esk-connections.png " ")
 
-2. This will open the configuration page for the **Process Transcriptions** integration. We need to edit the five connections in this integrations. Hover over the *New Transcription For Analysis* connection and then click on edit icon.
+2. This will open the configuration page for the **Process Transcriptions** integration. We need to edit the four connections in this integrations. Hover over the *New Transcription For Analysis* connection and then click on edit icon.
 
 3. This will take you to connection details page, keep the security policy with the default and click **Test** button.
     ![New Transcription for analysis connection test](./images/esk-connection1-test.png " ")
 
-4. After the test is finished you will see a confirmation dialog box saying "Connection New Audio File For Transcription was tested successfully".
+4. After the test is finished you will see a confirmation dialog box saying "Connection New Transcription For Analysis was tested successfully".
 
 5. Now Click Save button
     ![New Transcription for analysis connection save](./images/esk-connection1-save.png " ")
 
-6. After the connection is saved you will see a confirmation dialog box saying "Connection New Audio File For Transcription was saved successfully".
+6. After the connection is saved you will see a confirmation dialog box saying "Connection New Transcription For Analysis was saved successfully".
 
 7. Navigate back to the configuration page, Hover over **Read File From Storage Bucket** connection and click edit icon. This will open the connection details page.
 

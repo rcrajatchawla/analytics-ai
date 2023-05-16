@@ -1,11 +1,12 @@
 # Prepare data sources
-​
+
 ## Introduction
+
 ​
 This lab walks you through the steps to prepare the sample data that will be used to perform sentiment analysis. We will also create the buckets and databases to save the processed data.
-​
-Estimated Lab Time: 10 minutes
 
+
+Estimated Lab Time: 10 minutes
 ​
 ### Objectives
 ​
@@ -168,6 +169,10 @@ Whilst we are in the Database Actions dashboard, run the below queries to setup 
 	BELONGS_TO_CHANNEL CHAR (1) NOT NULL ,
 	CHARACTER_OFFSET NUMBER NOT NULL
 	)
+	</copy>
+	```
+	```
+	<copy>
 	ALTER TABLE livelabUser.KEYPHRASES ADD CONSTRAINT ENTITIES_CHECK_BELONGS_TO_CHANNEL CHECK ( BELONGS_TO_CHANNEL IN ('1', '2'));
 	ALTER TABLE livelabUser.KEYPHRASES ADD CONSTRAINT FK_CONVERSATION_IN_ENTITIES FOREIGN KEY(CONVERSATION_FILE_ID) REFERENCES livelabUser.CONVERSATIONS ( CONVERSATION_FILE_ID );
 	</copy>
@@ -182,11 +187,14 @@ Whilst we are in the Database Actions dashboard, run the below queries to setup 
 	BELONGS_TO_CHANNEL CHAR (1) NOT NULL ,
 	CHARACTER_OFFSET NUMBER NOT NULL
 	)
+	</copy>
+	```
+	```
+	<copy>
 	ALTER TABLE livelabUser.KEYPHRASES2 ADD CONSTRAINT KEYPHRASES_CHECK_BELONGS_TO_CHANNEL CHECK ( BELONGS_TO_CHANNEL IN ('1', '2'))
 	ALTER TABLE livelabUser.KEYPHRASES2 ADD CONSTRAINT FK_CONVERSATION_IN_KEYPHRASES FOREIGN KEY(CONVERSATION_FILE_ID) REFERENCES livelabUser.CONVERSATIONS ( CONVERSATION_FILE_ID );
 	</copy>
 	```
-	
 ​
 	```
 	<copy>CREATE TABLE livelabUser.SENTIMENTS
@@ -196,7 +204,7 @@ Whilst we are in the Database Actions dashboard, run the below queries to setup 
 	sentiment VARCHAR(64) NOT NULL,
 	character_offset NUMBER NOT NULL,
 	belongs_to_channel CHAR(1) NOT NULL,
-	AUDIO_OFFSET_FIRST_WORD_SECONDS FLOAT (126) NOT NULL
+	AUDIO_OFFSET_FIRST_WORD_SECONDS FLOAT (126) NOT NULL,
 	CONSTRAINT fk_conversation_in_sentiments FOREIGN KEY (conversation_file_id) REFERENCES livelabUser.conversations(conversation_file_id)
 	);</copy>
 	```
