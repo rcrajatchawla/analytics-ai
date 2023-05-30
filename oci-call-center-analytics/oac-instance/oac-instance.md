@@ -62,13 +62,13 @@ Estimated Lab Time: 5 minutes
 
 ## Task 3: Configure Workbook
 
-1. On the top right-hand side of the **Analytics Home Page**, click **Create**, and then **Connection**.
+1. On the top left-hand side of the **Analytics Home Page**, click **hamburger menu**, and then **Data** from the options.
 
-    ![Connection Creation](./images/create-connection.png)
+    ![Connection Creation](./images/navigate-to-connections.png)
 
-4. Choose **Oracle Autonomous Data Warehouse**.
+4. Click on **connections** on the top. From the connections listing page, click on three dots and then **inspect**
 
-    ![Connection Creation - ADW](./images/connection-type.png)
+    ![Connection Creation - ADW](./images/open-connection.png)
 
 5.	Enter the credentials to the data warehouse (target database) you created in **Lab 2: Prepare data sources > Task 2: Prepare Target Database**. If you need a reminder on how to get the wallet, See [Download a Wallet](https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/cswgs/autonomous-connect-download-credentials.html#GUID-B06202D2-0597-41AA-9481-3B174F75D4B1).  
 Click **Save** to save your new connection **information**.

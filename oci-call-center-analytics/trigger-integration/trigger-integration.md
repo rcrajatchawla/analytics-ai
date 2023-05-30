@@ -41,6 +41,8 @@ Set up CLI so that it can deploy functions to the right compartment and containe
 4.	Follow steps **1** through **7** under the “Setup fn CLI on Cloud Shell” section
 	* If you need more specific and detailed instructions, see this [Document](https://docs.oracle.com/en-us/iaas/Content/Functions/Tasks/functionscreatefncontext.htm)
 	* You can select any term for OCIR-REPO, it is just a prefix that will be used as the name of the container registry to use to deploy the function.
+
+    *Note: Please make sure that the repo name prefix is lowercase, else fn deploy will fail* 
 5.	Before proceeding to the next lab test the connection to the docker and log in: steps **8** to **11**
 
    ![Test CLI](./images/testcloudshell.png " ")
@@ -274,7 +276,7 @@ We will now create the function in the application. The function will do sentime
 
 7. Once you have edited the files in **Task 3**, deploy the function to your application, by running this cloud shell command. Make sure to replace **app-name** for the name of your application
     ```
-  	<copy>fn -v deploy -app <app-name></copy>
+  	<copy>fn -v deploy --app <app-name></copy>
     ```
     where, app-name is the name of the application you created in Task 1
 
@@ -306,7 +308,7 @@ We will now create the function in the application. The function will do sentime
 6. Under the Protocol choose "HTTPS (Custom URL)" from the dropdown. Fill the URL field with
 
         <copy>
-        https:<userName>:<Password>@<Integration-URL>/ic/api/integration/v1/flows/rest/TRANSCRIBE_AUDIO_FILES/1.0/NewAudioFileForTranscription
+        https://<userName>:<Password>@<Integration-URL>/ic/api/integration/v1/flows/rest/TRANSCRIBE_AUDIO_FILES/1.0/NewAudioFileForTranscription
         </copy>
 
     where the "userName" and "Password" are the cloud account login username and password in URL encoded format.(URL encoding replaces non-ASCII characters with "%" followed by hexadecimal digits)
@@ -350,6 +352,11 @@ We will now create the function in the application. The function will do sentime
 14. Create a new topic with Name "NewTranscriptionForAnalysis" following steps 2 and 3.
 
 15. Repeat the steps 5 to 13 to create a subscription for the new topic "NewTranscriptionForAnalysis" with the Integration **Process Transcriptions**.
+
+16. Note that while repeating **step 6** in the previous step, Under the Protocol choose "HTTPS (Custom URL)" from the dropdown. Fill the URL field with
+        <copy>
+        https://<userName>:<Password>@<Integration-URL>/ic/api/integration/v1/flows/rest/PROCESS_TRANSCRIPIONS/1.0/NewTranscriptionForAnalysis
+        </copy>
 
 
 ## Task 4: Event Setup for New Audio File for Transcription##
